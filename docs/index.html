@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Scanner</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Load Quagga2 from CDN for barcode scanning -->
+    <script src="https://cdn.jsdelivr.net/npm/@ericblade/quagga2@1.2.6/dist/quagga.js"></script>
+</head>
+<body>
+    <header>
+        <img src="logo-192.png" alt="Logo" class="logo">
+        <h1>Price Scanner</h1>
+    </header>
+    <main>
+        <button id="start-scan">Start Scan</button>
+        <div id="scanner-container" class="scanner"></div>
+        <div id="price-entry" class="hidden">
+            <p>Scanned barcode: <span id="scanned-code"></span></p>
+            <label>Enter price:
+                <input type="number" id="price-input" step="0.01" min="0">
+            </label>
+            <button id="save-price">Save Price</button>
+        </div>
+        <section id="price-list">
+            <h2>Saved Prices</h2>
+            <ul id="prices"></ul>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
